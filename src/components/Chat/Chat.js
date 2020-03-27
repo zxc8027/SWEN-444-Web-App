@@ -49,8 +49,8 @@ export class ChatContainer extends Component {
         var state = this.state;
         var index = state["openWindows"].indexOf(name);
         if (index >= 0) {
-            state["openWindows"].pop(index);
-            state["commonState"].pop(index);
+            state["openWindows"].splice(index,1);
+            state["commonState"].splice(index,1);
         }
         this.setState(state);
     }

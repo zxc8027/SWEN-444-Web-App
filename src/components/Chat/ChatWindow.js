@@ -13,10 +13,14 @@ export class ChatWindow extends Component {
   constructor(props,title) {
     super(props);
     this.title = title;
+    this.closeCallback = props["closeCallback"];
 
     // Set the initial state.
     this.state = {
       "open": false,
+    }
+    if (props["state"] != null) {
+      this.state = props["state"];
     }
 
     // Bind the functions.
@@ -51,16 +55,27 @@ export class ChatWindow extends Component {
    * Renders the component.
    */
   render() {
+    // Create the top bar.
+    var topBar = null;
+    if (this.closeCallback == null) {
+      topBar = <div className="chat-window-header text-light" onClick={ this.toggleState }>{ this.title }</div>
+    } else {
+      topBar = <div className="chat-window-header text-light" onClick={ this.toggleState }>
+        <div className="chat-title"> { this.title } </div> 
+        <span className="chat-close" onClick={ () => this.closeCallback(this.title) }>X</span>
+      </div>
+    }
+
     // Return just the header if the window is not open.
     if (this.state["open"] === false) {
       return <div className="chat-window-container">
-        <div className="chat-window-header text-light" onClick={ this.toggleState }>{ this.title }</div>
+        {topBar}
       </div>
     }
     
     // Return the window.
     return <div className="chat-window-container">
-      <div className="chat-window-header text-light" onClick={ this.toggleState }>{ this.title }</div>
+      { topBar }
       { this.getChatContents() }
     </div>
   }

@@ -11,6 +11,7 @@ div.chat-container {
 }
 
 div.chat-window-container {
+    float: left;
     width: 17.5rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -20,6 +21,9 @@ div.chat-inner-window-container {
     height: 20rem; 
     background-color: #FFFFFF;
     border: 1px solid rgba(0,0,0,.125);
+}
+
+div.y-scrollable { 
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -32,7 +36,18 @@ div.chat-window-header {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     width: 100%;
- }
+}
+
+div.chat-title {
+    float: left;
+    width: 15.5rem;
+}
+
+span.chat-close {
+    padding-right: 0.5rem;
+    text-align: right;
+    width: 100%;
+}
 
 div.chat-contact-container {
     height: 3rem; 

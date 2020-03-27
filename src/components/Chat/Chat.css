@@ -67,3 +67,45 @@ img.chat-contact-picture {
     width: 2rem;
     height: 2rem;
 }
+
+div.chat-messages-container {
+    width: 100%;
+    height: 17.8rem;
+}
+
+div.chat-message {
+    margin: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0,0,0,.125);
+    max-width: 80%;
+}
+
+div.chat-sender-other {
+    background-color: rgb(230,230,230);
+}
+
+div.chat-sender-self {
+    background-color: rgb(250,250,250);
+    left: 17.5%;
+    position: relative;
+}
+
+img.chat-message-image {
+    width: 100%;
+}
+
+input.chat-text-box {
+    width: 99%;
+    margin: 0px;
+    position: absolute;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 1px solid rgba(0,0,0,.125);
+    bottom: 0px;
+    padding: 0.25rem;
+}
+
+input.chat-text-box::placeholder {
+    color: #777777;
+}

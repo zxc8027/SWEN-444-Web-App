@@ -38,7 +38,7 @@ export class NavMenu extends Component {
         >
           <Container>
             <NavbarBrand tag={Link} to="/">
-              <img class="top-bar-logo" src="ArtBountyLogo.png"></img>
+              <img alt="logo" className="top-bar-logo" src="ArtBountyLogo.png"></img>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse

@@ -1,0 +1,52 @@
+/*
+ * Zachary Cook
+ *
+ * Theme for the chat.
+ */
+
+div.chat-container {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+div.chat-window-container {
+    width: 17.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+div.chat-inner-window-container {
+    height: 20rem; 
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0,0,0,.125);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+div.chat-window-header { 
+    background-color: #0099DD;
+    font-weight: 600;
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    width: 100%;
+ }
+
+div.chat-contact-container {
+    height: 3rem; 
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0,0,0,.125);
+    transition: background-color 0.15s ease-in-out;
+}
+
+div.chat-contact-container:hover {
+    background-color: #EEEEEE;
+}
+
+img.chat-contact-picture {
+    margin: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}

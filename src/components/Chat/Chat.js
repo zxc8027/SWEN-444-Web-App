@@ -64,9 +64,9 @@ export class ChatContainer extends Component {
         for (var i = 0; i < this.state["openWindows"].length; i++) {
             let name = this.state["openWindows"][i];
             let state = this.state["commonState"][i];
-            chatWindows.push(<ChatMessagesWindow key={ name } name={ name } state={ state } closeCallback={ this.closeChatWindow }></ChatMessagesWindow>);
+            chatWindows.push(<ChatMessagesWindow key={ name } name={ name } state={ state } closeCallback={ this.closeChatWindow } posRight={ (18 * (this.state["openWindows"].length - i)) + "rem" }></ChatMessagesWindow>);
         }
-        chatWindows.push(<ChatContactsWindow key="contacts" state={ this.state["contactsState"] } openCallback={ this.openChatWindow }></ChatContactsWindow>);
+        chatWindows.push(<ChatContactsWindow key="contacts" state={ this.state["contactsState"] } openCallback={ this.openChatWindow } posRight="0px"></ChatContactsWindow>);
 
         // Return the container with the windows.
         return <div className="chat-container">

@@ -5,16 +5,18 @@
  */
 
 div.chat-container {
-    position: absolute;
     right: 0px;
     bottom: 0px;
+    height: 0px;
 }
 
 div.chat-window-container {
+    position: fixed;
     float: left;
     width: 17.5rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
+    bottom: 0px;
 }
 
 div.chat-inner-window-container {

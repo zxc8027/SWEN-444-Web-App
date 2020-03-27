@@ -68,13 +68,13 @@ export class ChatWindow extends Component {
 
     // Return just the header if the window is not open.
     if (this.state["open"] === false) {
-      return <div className="chat-window-container">
+      return <div className="chat-window-container" style={ { right: this.props["posRight"] } }>
         {topBar}
       </div>
     }
     
     // Return the window.
-    return <div className="chat-window-container">
+    return <div className="chat-window-container" style={ { right: this.props["posRight"] } }>
       { topBar }
       { this.getChatContents() }
     </div>

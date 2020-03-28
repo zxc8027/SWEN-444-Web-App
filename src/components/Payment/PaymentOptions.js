@@ -14,7 +14,7 @@ export class PaymentOptions extends Component {
      */
     confirmPayment(methodName) {
         if (window.confirm("Are you sure you want to use " + methodName + "?")) {
-            window.location = "/payment/confirm";
+            window.location = "/payment/complete";
         }
     }
 
@@ -29,7 +29,7 @@ export class PaymentOptions extends Component {
     * Renders the component.
     */
     render() {
-        // Return the view.1
+        // Return the view.
         return <div>
             <Card>
                 <Card.Header as="h5">Pay to: John Doe</Card.Header>
@@ -73,7 +73,7 @@ export class PaymentOptions extends Component {
                 <Card.Body>
                     <Card.Text>PayPal
                         <br></br>
-                        <Button variant="primary" onClick={ ()=> { this.confirmPayment("PayPal") } }>Use</Button>&nbsp;
+                        <Button variant="primary" onClick={ ()=> { this.confirmPayment("My Payment Method 4") } }>Use</Button>&nbsp;
                         <Button variant="secondary" onClick={ this.cancelPayment }>Remove</Button>
                     </Card.Text>
                 </Card.Body>

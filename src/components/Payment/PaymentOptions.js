@@ -78,8 +78,10 @@ export class PaymentOptions extends Component {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Button variant="primary" onClick={ ()=> { window.location = "/payment/add"; } }>Add New Payment Method</Button><br></br><br></br><br></br><br></br>
-            <Button variant="secondary" onClick={ ()=> { window.history.back(); } }>Cancel</Button>
+            <center>
+                <Button variant="primary" onClick={ ()=> { window.location = "/payment/add"; } }>Add New Payment Method</Button><br></br><br></br><br></br><br></br>
+                <Button variant="secondary" onClick={ ()=> { window.history.back(); } }>Cancel</Button>
+            </center>
         </div>
     }
 }

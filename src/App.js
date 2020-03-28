@@ -4,6 +4,7 @@ import { Layout } from "./components/Layout";
 import { Home } from "./components/Home/Home.jsx";
 import { Gallery } from "./components/Gallery/Gallery.jsx";
 import { CommissionStatus } from "./components/Status/CommissionStatus";
+import { ShippingStatus } from "./components/Status/ShippingStatus";
 
 import "./custom.css";
 
@@ -16,6 +17,7 @@ export default class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/gallery" component={Gallery} />
         <Route exact path="/commission/status" component={CommissionStatus} />
+        <Route exact path="/shipping/status" component={ShippingStatus} />
       </Layout>
     );
   }

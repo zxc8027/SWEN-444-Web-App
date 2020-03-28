@@ -20,6 +20,7 @@ export default class App extends Component {
         <Route exact path="/commission/status" component={CommissionStatus} />
         <Route exact path="/shipping/status" component={ShippingStatus} />
         <Route exact path="/payment" component={PaymentOptions} />
+        <Route exact path="/login" component={Home} />
       </Layout>
     );
   }

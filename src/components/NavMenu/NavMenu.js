@@ -29,15 +29,49 @@ const PersonIcon = () => (
   </svg>
 );
 
-const popover = (
+const loggedInPopover = (
   <Popover id="popover-basic">
     <Popover.Title as="h3">Profile</Popover.Title>
     <Popover.Content>
-      <Form>
-        <Form.Group controlId="formBasicText">
-          <Form.Label>Title</Form.Label>
-          <Form.Control type="text" placeholder="Enter bounty title" />
+      <Form
+        onSubmit={() => {
+          window.localStorage.removeItem("signedIn");
+        }}
+      >
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Sign out</Form.Label>
+          <Button variant="primary" type="submit">
+            Sign Out
+          </Button>
         </Form.Group>
+      </Form>
+    </Popover.Content>
+  </Popover>
+);
+
+const popover = (
+  <Popover id="popover-basic">
+    <Popover.Title as="h3">Login</Popover.Title>
+    <Popover.Content>
+      <Form
+        onSubmit={() => {
+          window.localStorage.setItem("signedIn", true);
+        }}
+      >
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
     </Popover.Content>
   </Popover>
@@ -97,7 +131,11 @@ export class NavMenu extends Component {
                   <OverlayTrigger
                     trigger="click"
                     placement="bottom"
-                    overlay={popover}
+                    overlay={
+                      window.localStorage.getItem("signedIn") === null
+                        ? popover
+                        : loggedInPopover
+                    }
                   >
                     <Button variant="light" className="person-icon">
                       <PersonIcon />

@@ -130,7 +130,7 @@ export class ChatMessagesWindow extends ChatWindow {
         // Add a shipping status view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your shipment is <b>{ messageData["status"] }</b>.<br></br>
-          <Button variant="primary">View Status</Button>
+          <Button variant="primary" onClick={ () => { document.location="/shipping/status"; } }>View Status</Button>
         </div>);
       }
     }

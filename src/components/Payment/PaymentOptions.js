@@ -34,7 +34,7 @@ export class PaymentOptions extends Component {
             <Card>
                 <Card.Header as="h5">Pay to: John Doe</Card.Header>
                 <Card.Body>
-                <   img className="payment-image" src="chat/no-profile-picture.png"></img>
+                    <img className="payment-image" src="chat/no-profile-picture.png" alt="John Doe"></img>
                     <Card.Text>Reason: Commission<br></br>Amount due: $420.69</Card.Text>
                 </Card.Body>
             </Card>

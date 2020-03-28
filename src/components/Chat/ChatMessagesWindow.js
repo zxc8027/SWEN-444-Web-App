@@ -6,7 +6,7 @@
 
 import React from "react";
 import { ChatWindow } from "./ChatWindow";
-import { Card, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 // Test data for messages.
 var MESSAGES_TEST_DATA = {
@@ -113,20 +113,20 @@ export class ChatMessagesWindow extends ChatWindow {
         messageDivs.push(<div key={ i } className={ messageClasses }>{ messageData["message"] }</div>);
       } else if (type === "image") {
         // Add an image.
-        messageDivs.push(<div key={ i } className={ messageClasses }><img className="chat-message-image" src={ messageData["image"] }></img></div>);
-      } else if (type == "commissionStatus") {
+        messageDivs.push(<div key={ i } className={ messageClasses }><img className="chat-message-image" src={ messageData["image"] } alt={ messageData["image"] }></img></div>);
+      } else if (type === "commissionStatus") {
         // Add a commission status view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your commission is <b>{ messageData["status"] }</b>.<br></br>
           <Button variant="primary" onClick={ () => { document.location="/commission/status"; } }>View Commission</Button>
         </div>);
-      } else if (type == "invoice") {
+      } else if (type === "invoice") {
         // Add a invoice view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your commission is <b>pending payment</b>.<br></br>
           <Button variant="primary" onClick={ () => { document.location="/payment"; } }>Pay Invoice</Button>
         </div>);
-      } else if (type == "shippingStatus") {
+      } else if (type === "shippingStatus") {
         // Add a shipping status view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your shipment is <b>{ messageData["status"] }</b>.<br></br>

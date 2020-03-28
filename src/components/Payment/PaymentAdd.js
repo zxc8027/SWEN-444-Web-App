@@ -27,7 +27,7 @@ export class PaymentAdd extends Component {
     render() {
         // Create the toggle bar for the type.
         var topButtons;
-        if (this.state["method"] == "Credit Card") {
+        if (this.state["method"] === "Credit Card") {
             topButtons = <div>
                 <Button variant="primary" onClick={ ()=> { this.setState({ "method": "Credit Card" }); } }>Credit Card</Button>&nbsp;
                 <Button variant="secondary" onClick={ ()=> { this.setState({ "method": "PayPal" }); } }>PayPal</Button>
@@ -41,7 +41,7 @@ export class PaymentAdd extends Component {
 
         // Create the inputs.
         var inputs;
-        if (this.state["method"] == "Credit Card") {
+        if (this.state["method"] === "Credit Card") {
             inputs = <div>
                 <span>Card number</span><br></br>
                 <input className="form-control" style={ { "max-width": "20rem" }}></input>

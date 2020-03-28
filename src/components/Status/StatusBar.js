@@ -13,11 +13,11 @@ export class StatusBar extends Component {
    */
   render() {
     // Determine the markers.
-    var fillAmount = 0;
-    var markers = [];
-    var lastPercentage = 0;
-    for (var i = 0; i <  this.props["waypoints"].length; i++) {
-        var waypoint = this.props["waypoints"][i];
+    let fillAmount = 0;
+    let markers = [];
+    let lastPercentage = 0;
+    for (let i = 0; i <  this.props["waypoints"].length; i++) {
+        let waypoint = this.props["waypoints"][i];
 
         // Set the fill amount if it is the max position.
         if (waypoint["position"] > fillAmount) {
@@ -25,22 +25,22 @@ export class StatusBar extends Component {
         }
 
         // Add the marker.
-        if (waypoint["position"] != 0 &&  waypoint["position"] != 1) {
+        if (waypoint["position"] !== 0 &&  waypoint["position"] !== 1) {
             markers.push(<div className="status-bar-marker" style={ { "left": "calc(" + ((waypoint["position"] - lastPercentage - fillAmount) * 100) + "% + 1.5rem)" } }></div>)
             lastPercentage = waypoint["position"];
         }
     }
 
     // Determine the labels.
-    var labels = [];
-    for (var i = this.props["waypoints"].length - 1; i >= 0; i += -1) {
-        var waypoint = this.props["waypoints"][i];
+    let labels = [];
+    for (let i = this.props["waypoints"].length - 1; i >= 0; i += -1) {
+        let waypoint = this.props["waypoints"][i];
 
         // Add the label.
         labels.push(<Card>
             <Card.Header as="h5">{ waypoint["name"] + " (" + waypoint["date"] + ")" }</Card.Header>
             <Card.Body>
-                <img className="status-bar-image" src={ waypoint["img"] }></img>
+                <img className="status-bar-image" src={ waypoint["img"] } alt={ waypoint["img"] }></img>
                 <Card.Text>{ waypoint["description"] }</Card.Text>
             </Card.Body>
           </Card>)

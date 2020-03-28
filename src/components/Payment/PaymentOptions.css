@@ -1,0 +1,11 @@
+/*
+ * Zachary Cook
+ *
+ * Styles for the payment options.
+ */
+
+img.payment-image {
+    height: 3rem;
+    float: right;
+    margin-right: 0.5rem;
+}

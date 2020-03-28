@@ -124,7 +124,7 @@ export class ChatMessagesWindow extends ChatWindow {
         // Add a invoice view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your commission is <b>pending payment</b>.<br></br>
-          <Button variant="primary">Pay Invoice</Button>
+          <Button variant="primary" onClick={ () => { document.location="/payment"; } }>Pay Invoice</Button>
         </div>);
       } else if (type == "shippingStatus") {
         // Add a shipping status view.

@@ -14,7 +14,7 @@ export class PaymentOptions extends Component {
      */
     confirmPayment(methodName) {
         if (window.confirm("Are you sure you want to use " + methodName + "?")) {
-            window.location = "/payment/confirm";
+            window.location = "/payment/complete";
         }
     }
 
@@ -29,12 +29,12 @@ export class PaymentOptions extends Component {
     * Renders the component.
     */
     render() {
-        // Return the view.1
+        // Return the view.
         return <div>
             <Card>
                 <Card.Header as="h5">Pay to: John Doe</Card.Header>
                 <Card.Body>
-                <   img className="payment-image" src="chat/no-profile-picture.png"></img>
+                    <img className="payment-image" src="chat/no-profile-picture.png" alt="John Doe"></img>
                     <Card.Text>Reason: Commission<br></br>Amount due: $420.69</Card.Text>
                 </Card.Body>
             </Card>
@@ -73,13 +73,15 @@ export class PaymentOptions extends Component {
                 <Card.Body>
                     <Card.Text>PayPal
                         <br></br>
-                        <Button variant="primary" onClick={ ()=> { this.confirmPayment("PayPal") } }>Use</Button>&nbsp;
+                        <Button variant="primary" onClick={ ()=> { this.confirmPayment("My Payment Method 4") } }>Use</Button>&nbsp;
                         <Button variant="secondary" onClick={ this.cancelPayment }>Remove</Button>
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Button variant="primary" onClick={ ()=> { window.location = "/payment/add"; } }>Add New Payment Method</Button><br></br><br></br><br></br><br></br>
-            <Button variant="secondary" onClick={ ()=> { window.history.back(); } }>Cancel</Button>
+            <center>
+                <Button variant="primary" onClick={ ()=> { window.location = "/payment/add"; } }>Add New Payment Method</Button><br></br><br></br><br></br><br></br>
+                <Button variant="secondary" onClick={ ()=> { window.history.back(); } }>Cancel</Button>
+            </center>
         </div>
     }
 }

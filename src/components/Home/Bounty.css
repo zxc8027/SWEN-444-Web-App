@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+}
+.div-title {
+  flex: 10;
+  padding: 0.375rem 0.75rem;
+}
+.div-author {
+  flex: 1;
+}
+.author {
+  margin-left: 2em;
+  padding: 0.375rem 0.75rem;
+}
+
+.div-price {
+  flex: 1;
+}
+.price {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0.375rem 0.75rem;
+}
+
+.div-claim {
+  flex: 1;
+}
+.claim {
+  flex: 1;
+}
+
+.card-body {
+  display: flex;
+}
+
+.art-image {
+  max-width: 15%;
+  flex: 1;
+}
+
+.description {
+  border: 1px solid #dee2e6;
+  padding: 1em;
+  flex: 10;
+  margin-left: 2%;
+}

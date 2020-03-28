@@ -118,7 +118,7 @@ export class ChatMessagesWindow extends ChatWindow {
         // Add a commission status view.
         messageDivs.push(<div key={ i } className={ messageClasses }>
           Your commission is <b>{ messageData["status"] }</b>.<br></br>
-          <Button variant="primary">View Commission</Button>
+          <Button variant="primary" onClick={ () => { document.location="/commission/status"; } }>View Commission</Button>
         </div>);
       } else if (type == "invoice") {
         // Add a invoice view.

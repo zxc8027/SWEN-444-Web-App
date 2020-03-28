@@ -16,6 +16,7 @@ export class StatusBar extends Component {
     var fillAmount = 0;
     var markers = [];
     var labels = [];
+    var lastPercentage = 0;
     for (var i = this.props["waypoints"].length - 1; i >= 0; i += -1) {
         var waypoint = this.props["waypoints"][i];
 
@@ -26,7 +27,8 @@ export class StatusBar extends Component {
 
         // Add the marker.
         if (waypoint["position"] != 0 &&  waypoint["position"] != 1) {
-            markers.push(<div className="status-bar-marker" style={ { "left": "calc(" + (waypoint["position"] * 100) + "% - 2rem)" } }></div>)
+            markers.push(<div className="status-bar-marker" style={ { "left": "calc(" + ((lastPercentage - waypoint["position"]) * 100) + "% - 2rem)" } }></div>)
+            lastPercentage = waypoint["position"];
         }
 
         // Add the label.

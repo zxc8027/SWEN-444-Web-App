@@ -32,7 +32,8 @@ div.status-bar-background {
  div.status-bar-marker {
     border-radius: 2rem;
     background: #666666;
-    position: absolute;
+    float: right;
+    position: relative;
     width: 4rem;
     height: 4rem;
 }

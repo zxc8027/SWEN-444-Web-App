@@ -1,7 +1,39 @@
 import React, { Component } from "react";
+import { Bounty } from "./Bounty.jsx";
 import "./Home.css";
 
-import { Card, Button } from "react-bootstrap";
+const data = [
+  {
+    bounty: {
+      id: 1,
+      name: "Crow Statue",
+      author: "Chili",
+      description: "I want a cool bird statue",
+      priceRange: "$300 - $500",
+      imageSRC: "art/crow.jpg"
+    }
+  },
+  {
+    bounty: {
+      id: 2,
+      name: "Dog paiting",
+      author: "Dogster",
+      description: "Someone paint my dog thanks.",
+      priceRange: "$20 - $100",
+      imageSRC: "art/dog.jpg"
+    }
+  },
+  {
+    bounty: {
+      id: 3,
+      name: "Self Portrait",
+      author: "Logan",
+      description: "Please paint me like Leonardo DiCaprio did on Titanic",
+      priceRange: "$1000 - $3000",
+      imageSRC: "art/logan.jpg"
+    }
+  }
+];
 
 export class Home extends Component {
   static displayName = Home.name;
@@ -9,26 +41,10 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Card>
-            <Card.Header as="h5">Royal Crow Commision</Card.Header>
-            <Card.Body>
-              <Card.Title>Crow Commission</Card.Title>
-              <Card.Text>I want someone to make me a sick crow</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </div>
-        <div>
-          <Card>
-            <Card.Header as="h5">Royal Crow Commision</Card.Header>
-            <Card.Body>
-              <Card.Title>Crow Commission</Card.Title>
-              <Card.Text>I want someone to make me a sick crow</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </div>
+        <h1>Bounties</h1>
+        {data.map(c => (
+          <Bounty key={c.bounty.id} bounty={c.bounty}></Bounty>
+        ))}
       </div>
     );
   }

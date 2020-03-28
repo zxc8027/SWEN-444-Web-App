@@ -18,10 +18,14 @@ html {
 }
 
 .navbar {
-  background-color: #0099DD;
+  background-color: #0099dd;
 }
 
 img.top-bar-logo {
   width: 40px;
   margin-right: 5px;
+}
+
+.person-icon {
+  margin-left: 10%;
 }

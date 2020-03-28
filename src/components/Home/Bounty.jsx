@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Badge, Image, Row, Col } from "react-bootstrap";
+import { Card, Button, Badge, Image } from "react-bootstrap";
 import "./Bounty.css";
 
 export class Bounty extends Component {
@@ -7,8 +7,6 @@ export class Bounty extends Component {
 
   constructor(props) {
     super(props);
-
-    console.log(props.bounty);
 
     this.state = {
       bounty: {

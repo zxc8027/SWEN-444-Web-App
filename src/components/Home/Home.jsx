@@ -17,7 +17,7 @@ const data = [
   {
     bounty: {
       id: 2,
-      name: "Dog paiting",
+      name: "Dog painting",
       author: "Dogster",
       description: "Someone paint my dog thanks.",
       priceRange: "$20 - $100",

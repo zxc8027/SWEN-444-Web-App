@@ -30,8 +30,8 @@ export class Bounty extends Component {
           <Card.Header className="header" as="h5">
             <div className="div-title">{this.props.bounty.name}</div>
             <div className="div-author">
-              <Badge className="author" variant="primary">
-                By: {this.props.bounty.author}
+              <Badge className="author" variant="secondary">
+                @{this.props.bounty.author}
               </Badge>
             </div>
             <div className="div-price">

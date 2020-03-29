@@ -29,3 +29,19 @@ img.top-bar-logo {
 .person-icon {
   margin-left: 10%;
 }
+
+.create-account {
+  float: right;
+}
+
+.profile-image {
+  width: 100%;
+}
+
+#popover-loggedin {
+  width: 15em;
+}
+
+.badge-name {
+  font-size: medium;
+}

@@ -8,7 +8,14 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import { Button, OverlayTrigger, Popover, Form, Col } from "react-bootstrap";
+import {
+  Button,
+  OverlayTrigger,
+  Popover,
+  Form,
+  Image,
+  Badge
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavMenu.css";
 
@@ -30,16 +37,34 @@ const PersonIcon = () => (
 );
 
 const loggedInPopover = (
-  <Popover id="popover-basic">
+  <Popover id="popover-loggedin">
     <Popover.Title as="h3">Profile</Popover.Title>
     <Popover.Content>
+      <Form onSubmit={() => {}}>
+        <Form.Group controlId="formBasicText">
+          <Form.Group controlId="formBasicText">
+            <Image
+              className="profile-image"
+              src="art/longley.jpg"
+              roundedCircle
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicText">
+            <Badge className="badge-name" variant="dark">
+              <strong>@Longley1997</strong>
+            </Badge>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            My Profile
+          </Button>
+        </Form.Group>
+      </Form>
       <Form
         onSubmit={() => {
           window.localStorage.removeItem("signedIn");
         }}
       >
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Sign out</Form.Label>
+        <Form.Group controlId="formBasicText">
           <Button variant="primary" type="submit">
             Sign Out
           </Button>
@@ -70,7 +95,15 @@ const popover = (
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Login
+        </Button>
+        <Button
+          as={Link}
+          variant="secondary"
+          className="create-account"
+          to="/account/create"
+        >
+          Create Account
         </Button>
       </Form>
     </Popover.Content>

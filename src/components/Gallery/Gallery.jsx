@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Card, CardDeck, Badge } from "react-bootstrap";
+import {
+  Card,
+  CardDeck,
+  Badge,
+  InputGroup,
+  FormControl,
+  DropdownButton,
+  Dropdown
+} from "react-bootstrap";
 import "./Gallery.css";
 
 export class GalleryComponent extends Component {
@@ -119,6 +127,26 @@ export class Gallery extends Component {
     return (
       <div>
         <h1>Gallery</h1>
+        <InputGroup className="search-bar">
+          <FormControl
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon2"
+          />
+
+          <DropdownButton
+            as={InputGroup.Append}
+            variant="outline-secondary"
+            title="Filter"
+            id="input-group-dropdown-2"
+          >
+            <Dropdown.Item href="#">Title</Dropdown.Item>
+            <Dropdown.Item href="#">Accounts</Dropdown.Item>
+            <Dropdown.Item href="#">Tags</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item href="#">Most Popular</Dropdown.Item>
+          </DropdownButton>
+        </InputGroup>
         <CardDeck>
           {data.map(c => (
             <GalleryComponent key={c.card.id} card={c.card}></GalleryComponent>

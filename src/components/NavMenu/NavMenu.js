@@ -54,7 +54,7 @@ const loggedInPopover = (
               <strong>@Longley1997</strong>
             </Badge>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button as={Link} to="/profile" variant="primary" type="submit">
             My Profile
           </Button>
         </Form.Group>

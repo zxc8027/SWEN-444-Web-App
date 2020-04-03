@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Popover, OverlayTrigger, Form, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./AccountCreate.css";
 
 export class AccountCreate extends Component {
@@ -13,9 +13,16 @@ export class AccountCreate extends Component {
   }
 
   render() {
+    if (window.localStorage.getItem("signedIn") !== null) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
-        <Form>
+        <Form
+          onSubmit={() => {
+            window.localStorage.setItem("signedIn", true);
+          }}
+        >
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
             <Form.Control type="text" placeholder="Enter username" />
@@ -35,7 +42,7 @@ export class AccountCreate extends Component {
             <Form.Label>Profile picture</Form.Label>
             <Form.File id="custom-file" label="Profile picture" custom />
           </Form.Group>
-          <Button as={Link} variant="primary" to="/" type="submit">
+          <Button variant="primary" type="submit">
             Create Account
           </Button>
         </Form>

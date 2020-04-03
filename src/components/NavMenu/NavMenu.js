@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink
+  NavLink,
 } from "reactstrap";
 import {
   Button,
@@ -14,7 +14,7 @@ import {
   Popover,
   Form,
   Image,
-  Badge
+  Badge,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavMenu.css";
@@ -35,6 +35,17 @@ const PersonIcon = () => (
     />
   </svg>
 );
+
+function LogggedInBadge() {
+  if (window.localStorage.getItem("signedIn") === null) {
+    return null;
+  }
+  return (
+    <Badge className="badge-name" variant="dark">
+      <strong>@Longley1997</strong>
+    </Badge>
+  );
+}
 
 const loggedInPopover = (
   <Popover id="popover-loggedin">
@@ -118,13 +129,13 @@ export class NavMenu extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: true,
     };
   }
 
   toggleNavbar() {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: !this.state.collapsed,
     });
   }
 
@@ -143,6 +154,7 @@ export class NavMenu extends Component {
                 src="ArtBountyLogo.png"
               ></img>
             </NavbarBrand>
+            <LogggedInBadge></LogggedInBadge>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse
               className="d-sm-inline-flex flex-sm-row-reverse"

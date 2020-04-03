@@ -11,8 +11,8 @@ const data = [
       author: "Chili",
       description: "I want a cool bird statue",
       priceRange: "$300 - $500",
-      imageSRC: "art/crow.jpg"
-    }
+      imageSRC: "art/crow.jpg",
+    },
   },
   {
     bounty: {
@@ -21,8 +21,8 @@ const data = [
       author: "Dogster",
       description: "Someone paint my dog thanks.",
       priceRange: "$20 - $100",
-      imageSRC: "art/dog.jpg"
-    }
+      imageSRC: "art/dog.jpg",
+    },
   },
   {
     bounty: {
@@ -31,9 +31,9 @@ const data = [
       author: "Logan",
       description: "Please paint me like Leonardo DiCaprio did on Titanic",
       priceRange: "$1000 - $3000",
-      imageSRC: "art/logan.jpg"
-    }
-  }
+      imageSRC: "art/logan.jpg",
+    },
+  },
 ];
 
 const popover = (
@@ -95,8 +95,8 @@ export class Home extends Component {
         setShow: "",
         setTarget: "",
         target: "",
-        imageSRC: ""
-      }
+        imageSRC: "",
+      },
     };
   }
 
@@ -105,7 +105,7 @@ export class Home extends Component {
       <div>
         <CreateBounty></CreateBounty>
         <h1>Bounties </h1>
-        {data.map(c => (
+        {data.map((c) => (
           <Bounty key={c.bounty.id} bounty={c.bounty}></Bounty>
         ))}
       </div>

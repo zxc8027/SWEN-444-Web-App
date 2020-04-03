@@ -36,11 +36,30 @@ const data = [
   },
 ];
 
+const bounty = {
+  bounty: {
+    id: 4,
+    name: "Oil Painting",
+    author: "Longley1997",
+    description: "Create an oil paiting of my summer home please.",
+    priceRange: "$300 - $500",
+    imageSRC: "art/hobbit.jpg",
+  },
+};
+
 const popover = (
   <Popover id="popover-basic">
     <Popover.Title as="h3">Create Bounty</Popover.Title>
     <Popover.Content>
-      <Form>
+      <Form
+        onSubmit={() => {
+          var bounties = JSON.parse(window.localStorage.getItem("bountyData"));
+
+          bounties.push(bounty);
+
+          window.localStorage.setItem("bountyData", JSON.stringify(bounties));
+        }}
+      >
         <Form.Group controlId="formBasicText">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Enter bounty title" />
@@ -101,11 +120,16 @@ export class Home extends Component {
   }
 
   render() {
+    if (window.localStorage.getItem("bountyData") === null) {
+      window.localStorage.setItem("bountyData", JSON.stringify(data));
+    }
+    var bounties = JSON.parse(window.localStorage.getItem("bountyData"));
+
     return (
       <div>
         <CreateBounty></CreateBounty>
         <h1>Bounties </h1>
-        {data.map((c) => (
+        {bounties.map((c) => (
           <Bounty key={c.bounty.id} bounty={c.bounty}></Bounty>
         ))}
       </div>

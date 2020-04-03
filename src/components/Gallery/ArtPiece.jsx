@@ -36,6 +36,7 @@ export class ArtPiece extends Component {
   render() {
     return (
       <div>
+        <h1>Art Piece</h1>
         <Media>
           <img
             className="align-self-start mr-3"

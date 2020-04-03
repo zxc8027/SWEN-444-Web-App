@@ -57,7 +57,7 @@ export class Profile extends Component {
             </div>
             <div className="author">
               <Badge pill variant="success">
-                5 Commisions
+                5 Bounties
               </Badge>{" "}
             </div>
             <div className="author">

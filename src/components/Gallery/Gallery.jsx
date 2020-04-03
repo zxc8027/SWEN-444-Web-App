@@ -100,6 +100,14 @@ export class Gallery extends Component {
           >
             <Dropdown.Item
               onClick={() => {
+                this.setState({ filter: "none" });
+              }}
+              href="gallery?#none"
+            >
+              None
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
                 this.setState({ filter: "title" });
               }}
               href="gallery?#Title"

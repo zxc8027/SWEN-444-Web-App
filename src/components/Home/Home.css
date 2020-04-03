@@ -8,6 +8,7 @@
 
 #popover-basic {
   width: 100%;
+  z-index: 1040;
 }
 
 .description-create {

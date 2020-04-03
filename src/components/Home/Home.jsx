@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Bounty } from "./Bounty.jsx";
 import { Button, Popover, OverlayTrigger, Form, Col } from "react-bootstrap";
+import { confirmOK } from "../Gallery/ConfirmationOK.js";
 import "./Home.css";
+import { Redirect } from "react-router-dom";
 
 const data = [
   {
@@ -41,7 +43,7 @@ const bounty = {
     id: 4,
     name: "Oil Painting",
     author: "Longley1997",
-    description: "Create an oil paiting of my summer home please.",
+    description: "Create an oil painting of my summer home please.",
     priceRange: "$300 - $500",
     imageSRC: "art/hobbit.jpg",
   },
@@ -52,12 +54,18 @@ const popover = (
     <Popover.Title as="h3">Create Bounty</Popover.Title>
     <Popover.Content>
       <Form
-        onSubmit={() => {
-          var bounties = JSON.parse(window.localStorage.getItem("bountyData"));
+        onSubmit={async (event) => {
+          event.preventDefault();
+          if (await confirmOK("Bounty successfully created")) {
+            var bounties = JSON.parse(
+              window.localStorage.getItem("bountyData")
+            );
 
-          bounties.push(bounty);
+            bounties.push(bounty);
 
-          window.localStorage.setItem("bountyData", JSON.stringify(bounties));
+            window.localStorage.setItem("bountyData", JSON.stringify(bounties));
+            window.location.reload();
+          }
         }}
       >
         <Form.Group controlId="formBasicText">

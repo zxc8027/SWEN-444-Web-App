@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Button, Badge, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Bounty.css";
 
 export class Bounty extends Component {
@@ -14,8 +15,8 @@ export class Bounty extends Component {
         author: "",
         description: "",
         priceRange: "",
-        imageSRC: ""
-      }
+        imageSRC: "",
+      },
     };
   }
 
@@ -30,13 +31,23 @@ export class Bounty extends Component {
           <Card.Header className="header" as="h5">
             <div className="div-title">{this.props.bounty.name}</div>
             <div className="div-author">
-              <Badge className="author" variant="secondary">
-                @{this.props.bounty.author}
+              <Badge
+                as={Link}
+                to="/profile"
+                className="author-bounty"
+                variant="secondary"
+              >
+                <span className="author-span">
+                  {" "}
+                  @{this.props.bounty.author}
+                </span>
               </Badge>
             </div>
             <div className="div-price">
               <Badge className="price" variant="warning">
-                {this.props.bounty.priceRange}
+                <span className="price-span">
+                  {this.props.bounty.priceRange}
+                </span>
               </Badge>
             </div>
             <div className="div-claim">

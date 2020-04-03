@@ -8,9 +8,14 @@
 .div-author {
   flex: 1;
 }
-.author {
-  margin-left: 2em;
-  padding: 0.375rem 0.75rem;
+.author-bounty {
+  text-align: center;
+  padding: 1.2em;
+}
+
+.author-span {
+  position: relative;
+  bottom: 0.5em;
 }
 
 .div-price {
@@ -19,7 +24,13 @@
 .price {
   margin-left: 1em;
   margin-right: 1em;
-  padding: 0.375rem 0.75rem;
+  text-align: center;
+  padding: 1.2em;
+}
+
+.price-span {
+  position: relative;
+  bottom: 0.5em;
 }
 
 .div-claim {

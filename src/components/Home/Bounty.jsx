@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Card, Button, Badge, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { confirmOK } from "../Gallery/ConfirmationOK.js";
+import { confirm } from "../Gallery/Confirmation.js";
+
 import "./Bounty.css";
 
 export class Bounty extends Component {
@@ -51,7 +54,17 @@ export class Bounty extends Component {
               </Badge>
             </div>
             <div className="div-claim">
-              <Button className="claim" variant="primary">
+              <Button
+                onClick={async () => {
+                  if (
+                    await confirm("Are you sure you want to claim this bounty?")
+                  ) {
+                    await confirmOK("Bounty Claimed! User has been notified.");
+                  }
+                }}
+                className="claim"
+                variant="primary"
+              >
                 Claim
               </Button>
             </div>

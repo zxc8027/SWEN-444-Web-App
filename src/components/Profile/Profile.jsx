@@ -11,7 +11,7 @@ const data = [
       imageURL: "art/longley.jpg",
       author: "Longley1997",
       title: "This is a photo I took I hope you like it",
-      lastUpdated: "3",
+      lastUpdated: "1",
     },
   },
   {
@@ -20,7 +20,7 @@ const data = [
       imageURL: "art/cat.png",
       author: "Longley1997",
       title: "I drew my cat, his name is Oscar! ",
-      lastUpdated: "1",
+      lastUpdated: "5",
     },
   },
   {

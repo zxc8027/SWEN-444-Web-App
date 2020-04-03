@@ -78,7 +78,7 @@ const popover = (
 const CreateBounty = () => (
   <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
     <Button variant="info" className="add-bounty">
-      <strong>+</strong>
+      <strong>Create</strong>
     </Button>
   </OverlayTrigger>
 );

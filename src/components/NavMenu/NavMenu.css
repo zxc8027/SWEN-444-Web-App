@@ -30,6 +30,10 @@ img.top-bar-logo {
   margin-left: 10%;
 }
 
+.bell-icon {
+  margin-left: 1em;
+}
+
 .create-account {
   float: right;
 }
@@ -44,4 +48,8 @@ img.top-bar-logo {
 
 .badge-name {
   font-size: medium;
+}
+
+.toast-button {
+  margin: 2%;
 }

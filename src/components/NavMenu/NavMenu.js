@@ -15,9 +15,23 @@ import {
   Form,
   Image,
   Badge,
+  Toast,
+  Row,
+  Col,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavMenu.css";
+
+const BellIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+  >
+    <path d="M15.137 3.945c-.644-.374-1.042-1.07-1.041-1.82v-.003c.001-1.172-.938-2.122-2.096-2.122s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.667 2.712-1.985 11.715-6.862 13.306v1.749h20v-1.749c-4.877-1.591-2.195-10.594-6.863-13.306zm-3.137-2.945c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1zm3 20c0 1.598-1.392 3-2.971 3s-3.029-1.402-3.029-3h6z" />
+  </svg>
+);
 
 const PersonIcon = () => (
   <svg
@@ -86,6 +100,100 @@ const loggedInPopover = (
           </Button>
         </Form.Group>
       </Form>
+    </Popover.Content>
+  </Popover>
+);
+
+function NotificationToasts() {
+  return (
+    <>
+      <Toast>
+        <Toast.Header>
+          <img
+            src="art/money.png"
+            width="35px"
+            className="rounded mr-2"
+            alt=""
+          />
+          <strong className="mr-auto">Pay Invoice</strong>
+          <small>just now</small>
+        </Toast.Header>
+        <Toast.Body>You have an invoice to pay: </Toast.Body>
+        <div>
+          <Button
+            className="toast-button"
+            as={Link}
+            to="/payment"
+            variant="primary"
+          >
+            Pay Invoice
+          </Button>
+        </div>
+      </Toast>
+      <Toast>
+        <Toast.Header>
+          <img
+            src="art/miner.png"
+            width="35px"
+            className="rounded mr-2"
+            alt=""
+          />
+          <strong className="mr-auto">View Bounty</strong>
+          <small>just now</small>
+        </Toast.Header>
+        <Toast.Body>Check the status of your Bounty: </Toast.Body>
+        <div>
+          <Button
+            className="toast-button"
+            as={Link}
+            to="/commission/status"
+            variant="primary"
+          >
+            Bounty Status
+          </Button>
+        </div>
+      </Toast>
+      <Toast>
+        <Toast.Header>
+          <img
+            src="art/industry.png"
+            width="35px"
+            className="rounded mr-2"
+            alt=""
+          />
+          <strong className="mr-auto">View Shipment</strong>
+          <small>just now</small>
+        </Toast.Header>
+        <Toast.Body>Your shipment is in transit: </Toast.Body>
+        <div>
+          <Button
+            className="toast-button"
+            as={Link}
+            to="/shipping/status"
+            variant="primary"
+          >
+            View Shipment
+          </Button>
+        </div>
+      </Toast>
+    </>
+  );
+}
+
+const popoverBell = (
+  <Popover id="popover-basic">
+    <Popover.Title as="h3">Notifications</Popover.Title>
+    <Popover.Content>
+      <NotificationToasts></NotificationToasts>
+    </Popover.Content>
+  </Popover>
+);
+
+const popoverBellEmpty = (
+  <Popover id="popover-basic">
+    <Popover.Title as="h3">Notifications</Popover.Title>
+    <Popover.Content>
+      <small>Sign in to view notifications.</small>
     </Popover.Content>
   </Popover>
 );
@@ -189,6 +297,21 @@ export class NavMenu extends Component {
                   >
                     <Button variant="light" className="person-icon">
                       <PersonIcon />
+                    </Button>
+                  </OverlayTrigger>
+                </NavItem>
+                <NavItem>
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="bottom"
+                    overlay={
+                      window.localStorage.getItem("signedIn") === null
+                        ? popoverBellEmpty
+                        : popoverBell
+                    }
+                  >
+                    <Button variant="light" className="bell-icon">
+                      <BellIcon />
                     </Button>
                   </OverlayTrigger>
                 </NavItem>

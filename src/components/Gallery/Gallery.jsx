@@ -78,7 +78,7 @@ export class Gallery extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { filter: "Filter" };
   }
 
   render() {
@@ -95,15 +95,44 @@ export class Gallery extends Component {
           <DropdownButton
             as={InputGroup.Append}
             variant="outline-secondary"
-            title="Filter"
+            title={this.state.filter}
             id="input-group-dropdown-2"
           >
-            <Dropdown.Item href="#">Title</Dropdown.Item>
-            <Dropdown.Item href="#">Accounts</Dropdown.Item>
-            <Dropdown.Item href="#">Tags</Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                this.setState({ filter: "title" });
+              }}
+              href="gallery?#Title"
+            >
+              Title
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                this.setState({ filter: "account" });
+              }}
+              href="gallery?#Accounts"
+            >
+              Accounts
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                this.setState({ filter: "tag" });
+              }}
+              href="gallery?#Tags"
+            >
+              Tags
+            </Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item href="#">Most Popular</Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                this.setState({ filter: "popular" });
+              }}
+              href="gallery?#Popular"
+            >
+              Most Popular
+            </Dropdown.Item>
           </DropdownButton>
+          <Button className="search-button">Search</Button>
         </InputGroup>
         <CardDeck>
           {data.map((c) => (

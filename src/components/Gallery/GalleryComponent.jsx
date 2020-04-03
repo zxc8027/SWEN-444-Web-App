@@ -7,7 +7,7 @@ import {
   FormControl,
   DropdownButton,
   Dropdown,
-  Button
+  Button,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Gallery.css";
@@ -24,8 +24,8 @@ export class GalleryComponent extends Component {
         imageURL: "",
         author: "",
         title: "",
-        lastUpdated: ""
-      }
+        lastUpdated: "",
+      },
     };
   }
 
@@ -40,7 +40,9 @@ export class GalleryComponent extends Component {
           <Card.Img variant="top" src={this.state.imageURL} />
         </Button>
         <Card.Body>
-          <Badge variant="secondary">@{this.state.author}</Badge>
+          <Badge as={Link} to="/profile" variant="secondary">
+            @{this.state.author}
+          </Badge>
         </Card.Body>
         <Card.Body>
           <Card.Title>{this.state.title}</Card.Title>

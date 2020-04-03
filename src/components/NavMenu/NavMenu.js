@@ -41,7 +41,7 @@ function LogggedInBadge() {
     return null;
   }
   return (
-    <Badge className="badge-name" variant="dark">
+    <Badge as={Link} to="/profile" className="badge-name" variant="dark">
       <strong>@Longley1997</strong>
     </Badge>
   );
@@ -61,7 +61,12 @@ const loggedInPopover = (
             />
           </Form.Group>
           <Form.Group controlId="formBasicText">
-            <Badge className="badge-name" variant="dark">
+            <Badge
+              as={Link}
+              to="/profile"
+              className="badge-name"
+              variant="dark"
+            >
               <strong>@Longley1997</strong>
             </Badge>
           </Form.Group>

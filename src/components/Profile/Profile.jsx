@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Media, Badge, Image, CardDeck } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Profile.css";
 import { GalleryComponent } from "../Gallery/GalleryComponent";
 
@@ -10,8 +11,8 @@ const data = [
       imageURL: "art/longley.jpg",
       author: "Longley1997",
       title: "This is a photo I took I hope you like it",
-      lastUpdated: "3"
-    }
+      lastUpdated: "3",
+    },
   },
   {
     card: {
@@ -19,8 +20,8 @@ const data = [
       imageURL: "art/cat.png",
       author: "Longley1997",
       title: "I drew my cat, his name is Oscar! ",
-      lastUpdated: "1"
-    }
+      lastUpdated: "1",
+    },
   },
   {
     card: {
@@ -29,9 +30,9 @@ const data = [
       author: "Longley1997",
       title:
         "Been practicing my close up shots, hope it shows, feel free to buy this piece, and follow me on Tic Tok",
-      lastUpdated: "8"
-    }
-  }
+      lastUpdated: "8",
+    },
+  },
 ];
 
 export class Profile extends Component {
@@ -50,7 +51,9 @@ export class Profile extends Component {
           <Card.Header as="h5">
             Profile
             <div className="author">
-              <Badge variant="secondary">@Longley1997</Badge>
+              <Badge as={Link} to="/profile" variant="secondary">
+                @Longley1997
+              </Badge>
             </div>
             <div className="author">
               <Badge pill variant="success">
@@ -129,7 +132,7 @@ export class Profile extends Component {
         <div>
           <h1>Posts</h1>
           <CardDeck>
-            {data.map(c => (
+            {data.map((c) => (
               <GalleryComponent
                 key={c.card.id}
                 card={c.card}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { confirm } from "./Confirmation.js";
 import { confirmOK } from "./ConfirmationOK.js";
 import {
@@ -67,7 +68,9 @@ export class ArtPiece extends Component {
               <Card.Header as="h5">
                 Profile
                 <div className="author">
-                  <Badge variant="secondary">@Cioffi</Badge>
+                  <Badge as={Link} to="/profile" variant="secondary">
+                    @Cioffi
+                  </Badge>
                 </div>
               </Card.Header>
               <Card.Body>
@@ -125,7 +128,9 @@ export class ArtPiece extends Component {
                     </Media.Body>
                   </Media>
                   <div className="comment-name">
-                    <Badge variant="secondary">@Ragu</Badge>
+                    <Badge as={Link} to="/profile" variant="secondary">
+                      @Ragu
+                    </Badge>
                   </div>
                 </Card.Text>
               </Card.Body>

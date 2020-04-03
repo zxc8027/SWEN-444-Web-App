@@ -7,7 +7,7 @@ import {
   FormControl,
   DropdownButton,
   Dropdown,
-  Button
+  Button,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Gallery.css";
@@ -20,8 +20,8 @@ const data = [
       imageURL: "art/longley.jpg",
       author: "Longley1997",
       title: "This is a photo I took I hope you like it",
-      lastUpdated: "3"
-    }
+      lastUpdated: "3",
+    },
   },
   {
     card: {
@@ -29,8 +29,8 @@ const data = [
       imageURL: "art/a1.jpg",
       author: "colorfulArtist",
       title: "I drew this painting, enjoy! ",
-      lastUpdated: "1"
-    }
+      lastUpdated: "1",
+    },
   },
   {
     card: {
@@ -38,9 +38,9 @@ const data = [
       imageURL: "art/a2.jpeg",
       author: "Leonardo da Vinci",
       title: "Its smaller in real life :(",
-      lastUpdated: "8"
-    }
-  }
+      lastUpdated: "8",
+    },
+  },
 ];
 
 const data2 = [
@@ -50,17 +50,17 @@ const data2 = [
       imageURL: "art/a3.jpg",
       author: "Edvard Munch",
       title: "The Scream",
-      lastUpdated: "9"
-    }
+      lastUpdated: "9",
+    },
   },
   {
     card: {
       id: 2,
       imageURL: "art/a4.jpeg",
-      author: "Joe",
+      author: "Cioffi",
       title: "Feeling cute, might delete later.",
-      lastUpdated: "54"
-    }
+      lastUpdated: "54",
+    },
   },
   {
     card: {
@@ -68,9 +68,9 @@ const data2 = [
       imageURL: "art/a5.png",
       author: "Sanic",
       title: "Gotta go fast",
-      lastUpdated: "45"
-    }
-  }
+      lastUpdated: "45",
+    },
+  },
 ];
 
 export class Gallery extends Component {
@@ -82,8 +82,6 @@ export class Gallery extends Component {
 
     this.handleChange = this.handleChange.bind(this);
   }
-
-  handleChange = event => {};
 
   render() {
     return (
@@ -110,12 +108,12 @@ export class Gallery extends Component {
           </DropdownButton>
         </InputGroup>
         <CardDeck>
-          {data.map(c => (
+          {data.map((c) => (
             <GalleryComponent key={c.card.id} card={c.card}></GalleryComponent>
           ))}
         </CardDeck>
         <CardDeck>
-          {data2.map(c => (
+          {data2.map((c) => (
             <GalleryComponent key={c.card.id} card={c.card}></GalleryComponent>
           ))}
         </CardDeck>

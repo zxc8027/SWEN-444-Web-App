@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { confirm } from "./Confirmation.js";
+import { confirmOK } from "./ConfirmationOK.js";
 import {
   Media,
   Card,
@@ -6,7 +8,7 @@ import {
   Badge,
   Form,
   Button,
-  Dropdown
+  Dropdown,
 } from "react-bootstrap";
 import "./ArtPiece.css";
 
@@ -15,12 +17,20 @@ export class ArtPiece extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { message: "" };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
-  handleChange = event => {};
+  handleChange = (event) => {};
+
+  async handleOnClick() {
+    if (await confirm("Are your sure?")) {
+      await confirmOK("Successfully Purchased");
+    } else {
+    }
+  }
 
   render() {
     return (
@@ -37,6 +47,13 @@ export class ArtPiece extends Component {
                 Joseph Stalin{" "}
                 <div className="author">
                   <Badge variant="warning">$500 - $1000</Badge>
+                  <Button
+                    onClick={this.handleOnClick}
+                    className="buy-Button"
+                    variant="primary"
+                  >
+                    Buy
+                  </Button>
                 </div>
               </Card.Header>
               <Card.Body>
@@ -63,7 +80,7 @@ export class ArtPiece extends Component {
                       src="art/cioffi.jpeg"
                     />
                     <Media.Body>
-                      <h5>Hi I am joe</h5>
+                      <h5>Hi I am Stephen Cioffi</h5>
                       <p>
                         I am a Lieutenant Stephen Cioffi of the greater Boston
                         Police Department, I am a part time artist selling

@@ -63,11 +63,6 @@ span.chat-close {
     border: .5px solid;
 }
 
-span.chat-close:hover {
-    background-image: linear-gradient(#0099DD, #AACCFF);
-    
-}
-
 span.chat-close:active {
     background-image: none;
     background-color: #AACCFF;

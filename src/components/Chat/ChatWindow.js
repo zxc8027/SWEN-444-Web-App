@@ -58,7 +58,7 @@ export class ChatWindow extends Component {
     // Create the top bar.
     var topBar = null;
     if (this.closeCallback == null) {
-      topBar = <div className="chat-window-header text-light" onClick={ this.toggleState }>{ this.title }</div>
+      topBar = <div className="chat-window-header chat-window-header-menu text-light" onClick={ this.toggleState }>{ this.title }</div>
     } else {
       topBar = <div className="chat-window-header text-light" onClick={ this.toggleState }>
         <div className="chat-title"> { this.title } </div> 

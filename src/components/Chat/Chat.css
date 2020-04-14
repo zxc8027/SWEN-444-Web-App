@@ -33,22 +33,44 @@ div.y-scrollable {
 div.chat-window-header { 
     background-color: #0099DD;
     font-weight: 600;
-    padding: 0.25rem;
     padding-left: 0.5rem;
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     width: 100%;
+    height: 32px;
+}
+
+div.chat-window-header-menu { 
+    padding-top: 0.25rem;
+    padding-left: .75rem;
 }
 
 div.chat-title {
     float: left;
-    width: 15.5rem;
+    width: 15rem;
+    padding: 0.25rem;
 }
 
 span.chat-close {
-    padding-right: 0.5rem;
+    padding: 0 0.5rem;
     text-align: right;
     width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 32px;
+    border-radius: 10px;
+    border-color: white;
+    border: .5px solid;
+}
+
+span.chat-close:hover {
+    background-image: linear-gradient(#0099DD, #AACCFF);
+    
+}
+
+span.chat-close:active {
+    background-image: none;
+    background-color: #AACCFF;
 }
 
 div.chat-contact-container {

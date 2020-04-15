@@ -27,7 +27,7 @@ export class ArtPiece extends Component {
   handleChange = (event) => {};
 
   async handleOnClick() {
-    if (await confirm("Are your sure?")) {
+    if (await confirm("Are you sure?")) {
       await confirmOK("Successfully Purchased");
     } else {
     }
@@ -60,7 +60,7 @@ export class ArtPiece extends Component {
               </Card.Header>
               <Card.Body>
                 <Card.Text>
-                  This is a glorius picture of the myth, the man, the legend,
+                  This is a glorious picture of the myth, the man, the legend,
                   Joey Stalin.
                 </Card.Text>
               </Card.Body>

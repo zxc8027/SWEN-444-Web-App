@@ -66,6 +66,9 @@ Given that you are signed in, by clicking the bell icon a notification pane will
 
 ## Notes
 
+#### Clearing Data
+Login information is stored in localstorage, so clearing that will log you out. The bounties you create are also stored in localstorage, so clearing localstorage will delete any additional bounties you create during your session.
+
 #### Disclaimer 1
 Several of the pages are implemented as view only, in other words even if the data is entered correctly into the form, it will not be displayed on page. We do this because this website has no backend, and the UX is truly what we want to represent.
 
